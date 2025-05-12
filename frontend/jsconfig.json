@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "esnext",
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "baseUrl": "src",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@/*": ["../src/*"],
+      "@public/*": ["../public/*"]
+    }
+  },
+  "include": ["src/**/*", "../public/**/*", ".prettierrc.js", "lint-staged.config.js"],
+  "exclude": ["node_modules", "dist"]
+}
