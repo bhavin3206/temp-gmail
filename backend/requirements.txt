@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+httpx
+aiosmtplib
+pydantic[email]
+email-validator
