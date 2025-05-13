@@ -54,21 +54,11 @@ const GetMail = ({ emailData, setEmailData }) => {
   };
 
   const copyToClipboard = () => {
-    if (typeof window === "undefined" || !emailData.email) return;
-
-    if (navigator?.clipboard?.writeText) {
-      navigator.clipboard
-        .writeText(emailData.email)
-        .then(() => {
-          setEmailCopied(true);
-          setTimeout(() => setEmailCopied(false), 2000);
-        })
-        .catch((err) => {
-          console.error("Failed to copy:", err);
-        });
-    } else {
-      console.warn("Clipboard API not supported");
-    }
+    navigator.clipboard.writeText(emailData.email);
+    setEmailCopied(true);
+    setTimeout(() => {
+      setEmailCopied(false);
+    }, 2000);
   };
 
   return (
