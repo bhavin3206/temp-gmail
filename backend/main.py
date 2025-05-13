@@ -415,4 +415,4 @@ async def refresh_email_content(email: Email):
 if __name__ == "__main__":
     import uvicorn
     print('main_asy')
-    uvicorn.run("main:app", host="0.0.0.0", port=8005, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

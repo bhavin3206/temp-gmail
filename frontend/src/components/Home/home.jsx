@@ -33,7 +33,7 @@ const Home = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {/* card 1 */}
             <div className="bg-[#38AFE6] rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2.5 p-6 border-t-4 border-indigo-600 space-y-5">
-              <img src="/public/images/mail.svg" className="mx-auto size-20" alt="mail-info-icon" />
+              <img src="/images/mail.svg" className="mx-auto size-20" alt="mail-info-icon" />
               <p className="text-white">
                 We began TempMailHub because we saw no one offered secure, temporary Gmails. Our
                 goal was to make a user-friendly service that keeps your email safe and private. We
@@ -44,7 +44,7 @@ const Home = () => {
 
             {/* card 2 */}
             <div className="bg-[#F13834] rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2.5 p-6 border-t-4 border-purple-600 space-y-5">
-              <img src="/public/images/open-mail.svg" className="mx-auto size-20" alt="mail-icon" />
+              <img src="/images/open-mail.svg" className="mx-auto size-20" alt="mail-icon" />
               <p className="text-white">
                 We began TempMailHub because we saw no one offered secure, temporary Gmails. Our
                 goal was to make a user-friendly service that keeps your email safe and private. We
@@ -55,11 +55,7 @@ const Home = () => {
 
             {/* card 3 */}
             <div className="bg-[#F8B43C] rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2.5 p-6 border-t-4 border-pink-600 space-y-5">
-              <img
-                src="/public/images/browser.svg"
-                className="mx-auto size-20"
-                alt="browser-icon"
-              />
+              <img src="/images/browser.svg" className="mx-auto size-20" alt="browser-icon" />
               <p className="text-white">
                 We began TempMailHub because we saw no one offered secure, temporary Gmails. Our
                 goal was to make a user-friendly service that keeps your email safe and private. We
@@ -75,11 +71,7 @@ const Home = () => {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-20">
             <div className="col">
-              <img
-                src="/public/images/mail-hub.png"
-                className="mx-auto"
-                alt="mail-hub-responsive"
-              />
+              <img src="/images/mail-hub.png" className="mx-auto" alt="mail-hub-responsive" />
             </div>
 
             <div className="col">

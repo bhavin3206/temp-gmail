@@ -91,7 +91,7 @@ const GetMail = ({ emailData, setEmailData }) => {
                 />
               </button>
               <span
-                className={`absolute bg-black text-white rounded-md px-2 py-0.5 translate-x-1 ${
+                className={`absolute bg-black text-white rounded-md px-2 py-0.5 inset-y-0 left-full ml-1 ${
                   emailCopied ? "" : "hidden"
                 }`}
               >
