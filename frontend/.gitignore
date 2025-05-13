@@ -23,5 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-#node
-*.package-lock.json
+
+# node version
+package-lock.json
