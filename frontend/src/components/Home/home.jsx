@@ -25,43 +25,79 @@ const Home = () => {
       <div className="bg-primary py-10 md:py-20" id="whatistempmail">
         <div className="container">
           <div className="section-title mb-20">
-            <h4 className="text-black text-2xl xs:text-3xl md:text-4xl font-bold text-center">
-              WHAT IS TEMPMAILHUB?
+            <h4 className="text-black text-2xl xsm:text-3xl md:text-4xl font-bold text-center">
+              WHAT IS TEMPGMAIL?
             </h4>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {/* card 1 */}
-            <div className="bg-[#38AFE6] rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2.5 p-6 border-t-4 border-indigo-600 space-y-5">
-              <img src="/images/mail.svg" className="mx-auto size-20" alt="mail-info-icon" />
-              <p className="text-white">
-                We began TempMailHub because we saw no one offered secure, temporary Gmails. Our
-                goal was to make a user-friendly service that keeps your email safe and private. We
-                wanted to provide a simple solution for everyone needing a quick, secure, and
-                anonymous email option.
-              </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-y-24 sm:gap-y-32 sm:gap-x-10 md:gap-x-0 sm:py-5 md:py-[75px]">
+            <div className="flex items-center justify-center p-4">
+              <div className="relative transform rotate-45 border-4 border-[#38AFE6] rounded-4xl shrink-0 min-w-[235px] min-h-[235px] lg:min-w-72 lg:min-h-72 2xl:min-w-80 2xl:min-h-80">
+                <div className="absolute top-0 left-0 -translate-5 2xl:-translate-7 rotate-90 z-10">
+                  <div className="relative bg-[#2eb6f5] shadow-md flex items-center justify-center rounded-lg lg:rounded-xl 2xl:rounded-3xl size-16 lg:size-20 2xl:size-28">
+                    <img
+                      src="/images/mail.svg"
+                      alt="mail-icon"
+                      className="-rotate-[126deg] size-10 lg:size-12 2xl:size-16"
+                    />
+                  </div>
+                </div>
+
+                <div className="absolute inset-0 -translate-2 flex items-center justify-center bg-white p-4 text-center text-gray-600 rounded-4xl shadow-md">
+                  <p className="text-[10px] lg:text-xs 2xl:text-[13px] leading-relaxed break-words transform -rotate-45">
+                    We started TempGmail after realizing there were no secure options for temporary
+                    Gmail addresses. Our mission was to create an easy-to-use service that
+                    prioritizes email security and privacy. We set out to offer a straightforward
+                    solution for anyone in need of a fast, secure, and anonymous email alternative.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            {/* card 2 */}
-            <div className="bg-[#F13834] rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2.5 p-6 border-t-4 border-purple-600 space-y-5">
-              <img src="/images/open-mail.svg" className="mx-auto size-20" alt="mail-icon" />
-              <p className="text-white">
-                We began TempMailHub because we saw no one offered secure, temporary Gmails. Our
-                goal was to make a user-friendly service that keeps your email safe and private. We
-                wanted to provide a simple solution for everyone needing a quick, secure, and
-                anonymous email option.
-              </p>
+            <div className="flex items-center justify-center p-4">
+              <div className="relative transform rotate-45 border-4 border-[#F13834] rounded-4xl shrink-0 min-w-[235px] min-h-[235px] lg:min-w-72 lg:min-h-72 2xl:min-w-80 2xl:min-h-80">
+                <div className="absolute top-0 left-0 -translate-5 2xl:-translate-7 rotate-90 z-10">
+                  <div className="relative bg-[#F13834] shadow-md flex items-center justify-center rounded-lg lg:rounded-xl 2xl:rounded-3xl size-16 lg:size-20 2xl:size-28">
+                    <img
+                      src="/images/open-mail.svg"
+                      className="rotate-[222deg] size-10 lg:size-12 2xl:size-16"
+                      alt="gmail-icon"
+                    />
+                  </div>
+                </div>
+
+                <div className="absolute inset-0 -translate-2 flex items-center justify-center bg-white p-4 text-center text-gray-600 rounded-4xl shadow-md">
+                  <p className="text-[10px] lg:text-xs 2xl:text-[13px] leading-relaxed break-words transform -rotate-45">
+                    Get a free primary Gmail inbox with enhanced spam protection and complete
+                    anonymity. Our temporary Gmail addresses are instantly generated, easy to use,
+                    and ideal for one-time signups or any situation where a disposable email is
+                    needed. Keep your personal information private and your main inbox clean.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            {/* card 3 */}
-            <div className="bg-[#F8B43C] rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2.5 p-6 border-t-4 border-pink-600 space-y-5">
-              <img src="/images/browser.svg" className="mx-auto size-20" alt="browser-icon" />
-              <p className="text-white">
-                We began TempMailHub because we saw no one offered secure, temporary Gmails. Our
-                goal was to make a user-friendly service that keeps your email safe and private. We
-                wanted to provide a simple solution for everyone needing a quick, secure, and
-                anonymous email option.
-              </p>
+            <div className="flex items-center justify-center p-4">
+              <div className="relative transform rotate-45 border-4 border-[#F8B43C] rounded-4xl shrink-0 min-w-[235px] min-h-[235px] lg:min-w-72 lg:min-h-72 2xl:min-w-80 2xl:min-h-80">
+                <div className="absolute top-0 left-0 -translate-5 2xl:-translate-7 rotate-90 z-10">
+                  <div className="relative bg-[#F8B43C] shadow-md flex items-center justify-center rounded-lg lg:rounded-xl 2xl:rounded-3xl size-16 lg:size-20 2xl:size-28">
+                    <img
+                      src="/images/browser.svg"
+                      className="rotate-[225deg] size-10 lg:size-12 2xl:size-16"
+                      alt="browser-icon"
+                    />
+                  </div>
+                </div>
+
+                <div className="absolute inset-0 -translate-2 flex items-center justify-center bg-white p-4 text-center text-gray-600 rounded-4xl shadow-md">
+                  <p className="text-[10px] lg:text-xs 2xl:text-[13px] leading-relaxed break-words transform -rotate-45">
+                    We temporarily hold your emails for just 15 minutes and never store your
+                    personal information. Your privacy and security are our top priorities. Keep
+                    your primary inbox clutter-free and enjoy worry-free online activity. Count on
+                    us for temporary Gmail solutions designed with your privacy in mind.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -76,35 +112,35 @@ const Home = () => {
 
             <div className="col">
               <div className="section-title mb-10">
-                <h4 className="text-black text-2xl xs:text-3xl md:text-4xl font-bold text-center">
-                  WHY USE TEMPMAILHUB?
+                <h4 className="text-black text-2xl xsm:text-3xl md:text-4xl font-bold text-center">
+                  WHY USE TEMPGMAIL?
                 </h4>
               </div>
 
               <ul className="space-y-4 list-disc">
                 <li>
-                  <strong>Enhanced Privacy:</strong> Anonymity ensured, protecting your identity and
-                  personal details online.
+                  <strong>Stronger Privacy:</strong> Your identity and personal information stay
+                  protected, ensuring complete online anonymity.
                 </li>
                 <li>
-                  <strong>Exclusive Gmail Access:</strong> Unique temporary Gmail addresses,
-                  offering Google's reliability and familiarity.
+                  <strong>Exclusive Gmail Access:</strong> Get unique, temporary Gmail addresses
+                  backed by Google's trusted reliability and familiar interface.
                 </li>
                 <li>
-                  <strong>Superior Security:</strong> Prioritizing your safety with robust
-                  protection from threats and spam.
+                  <strong>Advanced Security:</strong> Your safety comes first with strong defenses
+                  against spam, phishing, and other online threats.
                 </li>
                 <li>
-                  <strong>User-Friendly Interface:</strong> Easy, intuitive navigation for quick,
-                  hassle-free temporary email creation.
+                  <strong>Intuitive Interface:</strong> Enjoy a clean, easy-to-use platform that
+                  makes generating temporary emails quick and effortless.
                 </li>
                 <li>
-                  <strong>Free and Accessible:</strong> High-quality, cost-free service, perfect for
-                  secure, temporary email needs.
+                  <strong>Free & Convenient:</strong> Access premium features at no cost—perfect for
+                  secure, short-term email use.
                 </li>
                 <li>
-                  <strong>Instant Delivery & Deletion:</strong> Immediate access to emails and swift
-                  disposal for utmost convenience.
+                  <strong>Instant Email Handling:</strong> Receive emails immediately and have them
+                  auto-deleted for maximum convenience and privacy.
                 </li>
               </ul>
             </div>
