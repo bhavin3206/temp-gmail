@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="text-black">
       <div className="bg-primary relative py-[100px]">
-        <div class="absolute top-0 left-0 w-full overflow-hidden leading-0">
+        <div className="absolute top-0 left-0 w-full overflow-hidden leading-0">
           <FooterTopShapSVG className="relative block w-[calc(300%+1.3px)] h-[100px] fill-white" />
         </div>
 
@@ -63,7 +63,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-0 rotate-180">
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-0 rotate-180">
           <FooterBottomShapSVG className="relative block w-[calc(300%+1.3px)] h-[100px] fill-white" />
         </div>
       </div>

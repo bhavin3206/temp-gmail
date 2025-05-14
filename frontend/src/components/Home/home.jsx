@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+import SectionTopSVG from "@public/svg/SectionTopSVG";
+import SectionBottomSVG from "@public/svg/SectionBottomSVG";
+
 import GetMail from "./get-mail";
 import RefreshMail from "./refresh-mail";
 
@@ -22,7 +25,11 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="bg-primary py-10 md:py-20" id="whatistempmail">
+      <div className="bg-primary py-10 md:py-20 rounded-edge relative" id="whatistempmail">
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-0 rotate-180 hidden lg:block">
+          <SectionTopSVG className="relative block w-[calc(100%+1.3px)] h-[100px]" />
+        </div>
+
         <div className="container">
           <div className="section-title mb-20">
             <h4 className="text-black text-2xl xsm:text-3xl md:text-4xl font-bold text-center">
@@ -77,7 +84,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="flex items-center justify-center p-4">
+            <div className="sm:col-span-2 xl:col-span-1 flex items-center justify-center p-4">
               <div className="relative transform rotate-45 border-4 border-[#F8B43C] rounded-4xl shrink-0 min-w-[235px] min-h-[235px] lg:min-w-72 lg:min-h-72 2xl:min-w-80 2xl:min-h-80">
                 <div className="absolute top-0 left-0 -translate-5 2xl:-translate-7 rotate-90 z-10">
                   <div className="relative bg-[#F8B43C] shadow-md flex items-center justify-center rounded-lg lg:rounded-xl 2xl:rounded-3xl size-16 lg:size-20 2xl:size-28">
@@ -100,6 +107,10 @@ const Home = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-0 hidden lg:block">
+          <SectionBottomSVG className="relative block w-[calc(100%+1.3px)] h-[100px]" />
         </div>
       </div>
 

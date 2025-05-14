@@ -234,7 +234,7 @@ async def contact(form: ContactForm):
         )
         return {"message": "Message sent successfully"}
     except Exception as e:
-        return {"message": f"Failed to send email: {str(e)}"}
+        return {"message": f"Failed to send email"}
 
 @app.get("/", tags=["Root"])
 async def root():

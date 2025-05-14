@@ -1,16 +1,22 @@
+import SectionBottomSVG from "@public/svg/SectionBottomSVG";
+
 export default function Disclaimer() {
   return (
     <>
       <section className="relative bg-primary py-10 md:py-20">
-        <div className="container">
+        <div className="container text-center">
           <div className="text-sm text-primary-foreground font-medium uppercase mb-2 tracking-wide">
             Disclaimer For
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-bold text-black relative inline-block">
             TempGmail
-            <span className="block h-1 w-24 bg-primary-foreground mt-3 rounded-full"></span>
+            {/* <span className="block h-1 w-24 bg-primary-foreground mt-3 rounded-full"></span> */}
           </h2>
+        </div>
+
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-0 hidden md:block">
+          <SectionBottomSVG className="relative block w-[calc(100%+1.3px)] h-14" />
         </div>
       </section>
 
