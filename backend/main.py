@@ -4,10 +4,15 @@ import asyncio
 from typing import Dict, List, Optional, Union, Set
 
 import httpx
-from fastapi import FastAPI, HTTPException, BackgroundTasks, WebSocket
+from fastapi import FastAPI, HTTPException, BackgroundTasks, WebSocket, Form
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from pydantic import EmailStr
+from email.message import EmailMessage
+import aiosmtplib
 
+GMAIL_USER = ""
+GMAIL_PASS= ""
 
 app = FastAPI(
     title="Temp Mail API",
@@ -105,6 +110,12 @@ class EmailContent(BaseModel):
 class EmailList(BaseModel):
     emails: List[str]
 
+class ContactForm(BaseModel):
+    name: str
+    email: EmailStr
+    subject: str
+    message: str
+
 async def get_random_user_agent() -> str:
     """Return a random user agent from the list."""
     return random.choice(USER_AGENTS)
@@ -194,10 +205,36 @@ async def email_polling_task():
         # Restart the task after a delay
         asyncio.get_event_loop().create_task(email_polling_task())
 
+
+
+
 # Start the background polling task
 @app.on_event("startup")
 async def startup_event():
     asyncio.create_task(email_polling_task())
+
+@app.post("/contact_email")
+async def contact(form: ContactForm):
+    msg = EmailMessage()
+    msg["From"] = GMAIL_USER
+    msg["To"] = GMAIL_USER
+    msg["Subject"] = f"New Message: {form.subject}"
+    msg.set_content(
+        f"Name: {form.name}\nEmail: {form.email}\n\n{form.message}"
+    )
+
+    try:
+        await aiosmtplib.send(
+            msg,
+            hostname="smtp.gmail.com",
+            port=587,
+            start_tls=True,
+            username=GMAIL_USER,
+            password=GMAIL_PASS,
+        )
+        return {"message": "Message sent successfully"}
+    except Exception as e:
+        return {"message": f"Failed to send email: {str(e)}"}
 
 @app.get("/", tags=["Root"])
 async def root():
@@ -213,6 +250,16 @@ async def get_email(background_tasks: BackgroundTasks):
     background_tasks.add_task(fetch_email_content, email)
     
     return {"email": email}
+
+
+@app.post("/email/refresh", response_model=EmailContent, tags=["Email"])
+async def refresh_email_content(email: Email):
+    """Force refresh content for a specific email address."""
+    content = await fetch_email_content(email.email)
+
+    return {"email": email.email, "content": content}
+
+
 
 # @app.get("/emails", response_model=EmailList, tags=["Email"])
 # async def get_multiple_emails(background_tasks: BackgroundTasks, count: int = 1):
@@ -236,13 +283,6 @@ async def get_email(background_tasks: BackgroundTasks):
 #     content = await fetch_email_content(email)
     
 #     return {"email": email, "content": content}
-
-@app.post("/email/refresh", response_model=EmailContent, tags=["Email"])
-async def refresh_email_content(email: Email):
-    """Force refresh content for a specific email address."""
-    content = await fetch_email_content(email.email)
-
-    return {"email": email.email, "content": content}
 
 # @app.websocket("/ws/email/{email}")
 # async def websocket_endpoint(websocket: WebSocket, email: str):
