@@ -11,8 +11,8 @@ from pydantic import EmailStr
 from email.message import EmailMessage
 import aiosmtplib
 
-GMAIL_USER = ""
-GMAIL_PASS= ""
+GMAIL_USER = "bhavinpatel99987@gmail.com"
+GMAIL_PASS= "tquw dzdf vpfq kjif"
 
 app = FastAPI(
     title="Temp Mail API",

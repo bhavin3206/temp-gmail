@@ -23,18 +23,18 @@ export default function TermAndContition() {
 
             <div className="space-y-4">
               <p className="leading-relaxed text-base sm:text-lg">
-                Welcome to TempMailHub! These terms and conditions outline the rules and regulations
-                for the use of TempMailHub's website and services, located at tempmailhub.com. By
+                Welcome to TempGmail! These terms and conditions outline the rules and regulations
+                for the use of TempGmail's website and services, located at TempGmail.com. By
                 accessing this website and using our services, we assume you accept these terms and
-                conditions. Do not continue to use TempMailHub if you do not agree to all of the
-                terms and conditions stated on this page.
+                conditions. Do not continue to use TemTempGmailpMailHub if you do not agree to all
+                of the terms and conditions stated on this page.
               </p>
 
               <p className="leading-relaxed text-base sm:text-lg">
                 <b>
                   The following terminology applies to these Terms and Conditions, Privacy
                   Statement, and Disclaimer Notice and all agreements: "Client," "You," and "Your"
-                  refer to you, the person logging into this website and compliant to the Company’s
+                  refer to you, the person logging into this website and compliant to the Company's
                   terms and conditions. "The Company," "Ourselves," "We," "Our," and "Us," refer to
                   our Company. "Party," "Parties," or "Us," refers to both the Client and ourselves.
                 </b>
@@ -51,11 +51,10 @@ export default function TermAndContition() {
             <div className="space-y-4">
               <h5 className="text-2xl sm:text-3xl font-bold text-primary-foreground">Services</h5>
               <p className="leading-relaxed text-base sm:text-lg">
-                By using our website, you hereby TempMailHub provides a disposable Gmail service
-                that enables users to create temporary and anonymous email addresses. These
-                temporary email addresses, typically ranging from a few minutes to a few hours, can
-                be used for various purposes, including signing up for websites, services, or
-                newsletters.
+                By using our website, you hereby TempGmail provides a disposable Gmail service that
+                enables users to create temporary and anonymous email addresses. These temporary
+                email addresses, typically ranging from a few minutes to a few hours, can be used
+                for various purposes, including signing up for websites, services, or newsletters.
               </p>
             </div>
 
@@ -64,9 +63,9 @@ export default function TermAndContition() {
                 User Data and Privacy
               </h5>
               <p className="leading-relaxed text-base sm:text-lg">
-                At TempMailHub, we prioritize user privacy and data protection. We do not save,
-                store, or share any user data or email information provided through our service. We
-                operate on a strict policy of anonymity and do not track or monitor user activities.
+                At TempGmail, we prioritize user privacy and data protection. We do not save, store,
+                or share any user data or email information provided through our service. We operate
+                on a strict policy of anonymity and do not track or monitor user activities.
               </p>
             </div>
 
@@ -77,8 +76,7 @@ export default function TermAndContition() {
 
               <ul className="list-disc pl-5">
                 <li>
-                  Users are prohibited from using TempMailHub for any illegal or unauthorized
-                  purpose.
+                  Users are prohibited from using TempGmail for any illegal or unauthorized purpose.
                 </li>
                 <li>
                   Users must not attempt to access accounts or services using temporary email
@@ -86,7 +84,7 @@ export default function TermAndContition() {
                 </li>
                 <li>
                   Users are responsible for the content and activities associated with the temporary
-                  email addresses generated through TempMailHub.
+                  email addresses generated through TempGmail.
                 </li>
               </ul>
             </div>
@@ -94,10 +92,10 @@ export default function TermAndContition() {
             <div className="space-y-4">
               <h5 className="text-2xl sm:text-3xl font-bold text-primary-foreground">Disclaimer</h5>
               <p className="leading-relaxed text-base sm:text-lg">
-                By using our website, you hereby TempMailHub is provided on an "as is" and "as
+                By using our website, you hereby TempGmail is provided on an "as is" and "as
                 available" basis without any representations or warranties, express or implied. We
                 do not guarantee the accuracy, reliability, or availability of our service. While we
-                strive to ensure the accuracy of the information provided through TempMailHub, we
+                strive to ensure the accuracy of the information provided through TempGmail, we
                 cannot guarantee that all data and content will be error-free or up-to-date. Users
                 should independently verify any information obtained through our service before
                 relying on it.
@@ -109,16 +107,16 @@ export default function TermAndContition() {
                 Limitation of Liability
               </h5>
               <p className="leading-relaxed text-base sm:text-lg">
-                In no event shall TempMailHub, nor its directors, employees, partners, agents,
+                In no event shall TempGmail, nor its directors, employees, partners, agents,
                 suppliers, or affiliates, be liable for any indirect, incidental, special,
                 consequential, or punitive damages, including without limitation, loss of profits,
                 data, use, goodwill, or other intangible losses resulting from:
               </p>
 
               <ul className="list-disc pl-5">
-                <li>The use or inability to use TempMailHub.</li>
+                <li>The use or inability to use TempGmail.</li>
                 <li>Unauthorized access to or alteration of your transmissions or data.</li>
-                <li>Any other matter relating to TempMailHub.</li>
+                <li>Any other matter relating to TempGmail.</li>
               </ul>
             </div>
 
@@ -127,15 +125,15 @@ export default function TermAndContition() {
                 Changes to Terms and Conditions
               </h5>
               <p className="leading-relaxed text-base sm:text-lg">
-                In no event shall TempMailHub, TempMailHub reserves the right to modify or replace
-                these terms and conditions at any time. It is your responsibility to review this
-                page periodically for changes. Your continued use of TempMailHub after any
-                modifications indicate your acceptance of those changes.
+                In no event shall TempGmail, TempGmail reserves the right to modify or replace these
+                terms and conditions at any time. It is your responsibility to review this page
+                periodically for changes. Your continued use of TempGmail after any modifications
+                indicate your acceptance of those changes.
               </p>
 
               <p>
-                In no event shall TempMailHub, By using TempMailHub, you acknowledge that you have
-                read, understood, and agree to be bound by these terms and conditions.
+                In no event shall TempGmail, By using TempGmail, you acknowledge that you have read,
+                understood, and agree to be bound by these terms and conditions.
               </p>
             </div>
           </div>

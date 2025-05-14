@@ -25,12 +25,15 @@ export default function Disclaimer() {
               <p className="leading-relaxed text-base sm:text-lg">
                 If you require any more information or have any questions about our site's
                 disclaimer, please feel free to contact us by email at tempmailhub@gmail.com. All
-                the information on this website - https://tempmailhub.org - is published in good
-                faith and for general information purpose only. tempmailhup does not make any
-                warranties about the completeness, reliability and accuracy of this information. Any
-                action you take upon the information you find on this website (tempmailhup), is
-                strictly at your own risk. tempmailhup will not be liable for any losses and/or
-                damages in connection with the use of our website.
+                the information on this website -{" "}
+                <a href="https://tempgmail.net" className="text-primary-foreground" target="_blank">
+                  https://tempgmail.net
+                </a>{" "}
+                - is published in good faith and for general information purpose only. TempGmail
+                does not make any warranties about the completeness, reliability and accuracy of
+                this information. Any action you take upon the information you find on this website
+                (TempGmail), is strictly at your own risk. TempGmail will not be liable for any
+                losses and/or damages in connection with the use of our website.
               </p>
 
               <p className="leading-relaxed text-base sm:text-lg">
@@ -54,7 +57,7 @@ export default function Disclaimer() {
               <h5 className="text-2xl sm:text-3xl font-bold text-primary-foreground">Consent</h5>
               <p className="leading-relaxed text-base sm:text-lg">
                 By using our website, you hereby consent to our disclaimer and agree to its terms.
-                By accessing or using tempmailhub.org, you acknowledge that you have read this
+                By accessing or using tempgmail.net, you acknowledge that you have read this
                 disclaimer and agree to all its terms and conditions. You consent to the collection,
                 use, and disclosure of your personal information in accordance with our Privacy
                 Policy. If you do not agree to abide by the terms of this disclaimer, you must not

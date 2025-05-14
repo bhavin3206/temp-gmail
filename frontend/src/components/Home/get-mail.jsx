@@ -65,12 +65,12 @@ const GetMail = ({ emailData, setEmailData }) => {
     <>
       <div className="space-y-6">
         <div className="space-y-3 text-center">
-          <h2 className="text-black [&>span]:text-primary-foreground text-2xl xs:text-2xl md:text-4xl font-bold">
-            Get Your temp <span>G</span> <span>m</span> <span>a</span> <span>i</span> <span>l</span>
+          <h2 className="text-black [&>span]:text-primary-foreground text-2xl xsm:text-2xl md:text-4xl font-bold">
+            Get Your Temp <span>G</span> <span>m</span> <span>a</span> <span>i</span> <span>l</span>
           </h2>
           <p className="text-sm md:text-base">
-            While many temporary mail providers exist, we stand apart by offering exclusive, secure
-            Gmail solutions with unparalleled privacy protection.
+            While numerous temporary email services are available, we distinguish ourselves by
+            providing exclusive, secure Gmail-based solutions with unmatched privacy protection.
           </p>
         </div>
 

@@ -22,10 +22,10 @@ export default function Footer() {
                 <h3 className="text-lg md:text-2xl font-bold">About Our Work</h3>
 
                 <p className="text-sm md:text-base max-w-96">
-                  We began TempMailHub because we saw no one offered secure, temporary Gmails. Our
-                  goal was to make a user-friendly service that keeps your email safe and private.
-                  We wanted to provide a simple solution for everyone needing a quick, secure, and
-                  anonymous email option.
+                  TempGmail was created to fill a gap—no one offered truly secure, temporary Gmail
+                  addresses. Our mission is to deliver a simple, user-friendly service that protects
+                  your privacy and keeps your email safe. We set out to provide an easy, reliable
+                  solution for anyone in need of a quick, secure, and anonymous email option.
                 </p>
               </div>
             </div>
