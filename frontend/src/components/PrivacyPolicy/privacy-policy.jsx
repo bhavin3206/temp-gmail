@@ -179,7 +179,6 @@ export default function PrivacyPolicy() {
 
               <ul className="pl-5 list-disc">
                 <li>Email: nihapmrm@gmail.com</li>
-                <li>Postal Address: Alexandria, 32 Washingtorn str, 22303</li>
               </ul>
 
               <p className="leading-relaxed text-base sm:text-lg">

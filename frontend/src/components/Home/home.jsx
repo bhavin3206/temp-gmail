@@ -77,7 +77,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="flex items-center justify-center p-4">
+            <div className="sm:col-span-2 xl:col-span-1 flex items-center justify-center p-4">
               <div className="relative transform rotate-45 border-4 border-[#F8B43C] rounded-4xl shrink-0 min-w-[235px] min-h-[235px] lg:min-w-72 lg:min-h-72 2xl:min-w-80 2xl:min-h-80">
                 <div className="absolute top-0 left-0 -translate-5 2xl:-translate-7 rotate-90 z-10">
                   <div className="relative bg-[#F8B43C] shadow-md flex items-center justify-center rounded-lg lg:rounded-xl 2xl:rounded-3xl size-16 lg:size-20 2xl:size-28">
