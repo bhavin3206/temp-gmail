@@ -258,7 +258,7 @@ async def startup_event():
 @app.post("/contact_email")
 async def contact(form: ContactForm, background_tasks: BackgroundTasks):
     background_tasks.add_task(send_contact_email, form)
-    return {"message": "Message is being sent in the background"}
+    return {"message": "Message is being sent"}
 
 @app.get("/", tags=["Root"])
 async def root():
