@@ -1,3 +1,5 @@
+import SectionBottomSVG from "@public/svg/SectionBottomSVG";
+
 export default function PrivacyPolicy() {
   return (
     <>
@@ -7,10 +9,14 @@ export default function PrivacyPolicy() {
             Privacy Policy For
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-bold text-black relative inline-block">
+          <h2 className="text-3xl sm:text-4xl font-bold text-black relative inline-block text-center">
             TempGmail
-            <span className="block h-1 w-24 bg-primary-foreground mt-3 rounded-full"></span>
+            {/* <span className="block h-1 w-24 bg-primary-foreground mt-3 rounded-full"></span> */}
           </h2>
+        </div>
+
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-0 hidden md:block">
+          <SectionBottomSVG className="relative block w-[calc(100%+1.3px)] h-14" />
         </div>
       </section>
 
