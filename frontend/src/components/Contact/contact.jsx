@@ -48,9 +48,9 @@ export default function Contact() {
 
             {/* Right Side: Contact Form */}
             <div className="space-y-6" data-aos="fade-left">
-              <div className="space-y-4">
-                <div>
-                  <label className="block mb-1 font-medium text-black">Full Name</label>
+              <form className="space-y-4">
+                <div className="space-y-1">
+                  <label className="block font-medium text-black">Full Name</label>
                   <div className="relative">
                     <input
                       type="text"
@@ -65,8 +65,9 @@ export default function Contact() {
                     />
                   </div>
                 </div>
-                <div>
-                  <label className="block mb-1 font-medium text-gray-700">Email Address</label>
+
+                <div className="space-y-1">
+                  <label className="block font-medium text-gray-700">Email Address</label>
                   <div className="relative">
                     <input
                       type="email"
@@ -81,8 +82,9 @@ export default function Contact() {
                     />
                   </div>
                 </div>
-                <div>
-                  <label className="block mb-1 font-medium text-gray-700">Subject</label>
+
+                <div className="space-y-1">
+                  <label className="block font-medium text-gray-700">Subject</label>
                   <div className="relative">
                     <input
                       type="text"
@@ -97,20 +99,20 @@ export default function Contact() {
                     />
                   </div>
                 </div>
-                <div>
-                  <label className="block mb-1 font-medium text-gray-700">Message</label>
+
+                <div className="space-y-1">
+                  <label className="block font-medium text-gray-700">Message</label>
                   <textarea
                     rows="4"
                     className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-foreground transition-all"
                     placeholder="Tell us more..."
                   ></textarea>
                 </div>
-                <div>
-                  <button className="w-full bg-sky-500 text-white px-6 py-3 rounded-lg hover:bg-sky-700 transition-transform transform hover:-translate-y-1 duration-300 cursor-pointer">
-                    Send Message
-                  </button>
-                </div>
-              </div>
+
+                <button className="w-full bg-sky-500 text-white px-6 py-3 rounded-lg hover:bg-sky-700 transition-transform transform hover:-translate-y-1 duration-300 cursor-pointer">
+                  Send Message
+                </button>
+              </form>
             </div>
           </div>
         </div>
