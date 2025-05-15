@@ -62,7 +62,9 @@ const UniqueSection = [
     number: "5",
     title: "Free and Accessible",
     description:
-      "Temp Gmail is dedicated to offering a top-tier service that's available to all. Get the advantages of a temporary Gmail address at no cost—ideal for quick sign-ups, testing, or any situation where you want to keep your primary email private.",
+      "Temp Gmail offers free, disposable Gmail addresses—ideal for sign-ups, testing, or protecting your real inbox from spam and unwanted messages.",
+    // description:
+    //   "Temp Gmail is dedicated to offering a top-tier service that's available to all. Get the advantages of a temporary Gmail address at no cost—ideal for quick sign-ups, testing, or any situation where you want to keep your primary email private.",
   },
 ];
 
