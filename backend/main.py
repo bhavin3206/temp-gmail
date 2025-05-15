@@ -206,15 +206,7 @@ async def email_polling_task():
         asyncio.get_event_loop().create_task(email_polling_task())
 
 
-
-
-# Start the background polling task
-@app.on_event("startup")
-async def startup_event():
-    asyncio.create_task(email_polling_task())
-
-@app.post("/contact_email")
-async def contact(form: ContactForm):
+async def send_contact_email(form: ContactForm):
     msg = EmailMessage()
     msg["From"] = GMAIL_USER
     msg["To"] = GMAIL_USER
@@ -232,9 +224,41 @@ async def contact(form: ContactForm):
             username=GMAIL_USER,
             password=GMAIL_PASS,
         )
-        return {"message": "Message sent successfully"}
     except Exception as e:
-        return {"message": f"Failed to send email"}
+        print(f"[Error sending contact email] {e}")
+
+
+# Start the background polling task
+@app.on_event("startup")
+async def startup_event():
+    asyncio.create_task(email_polling_task())
+
+# @app.post("/contact_email")
+# async def contact(form: ContactForm):
+#     msg = EmailMessage()
+#     msg["From"] = GMAIL_USER
+#     msg["To"] = GMAIL_USER
+#     msg["Subject"] = f"New Message: {form.subject}"
+#     msg.set_content(
+#         f"Name: {form.name}\nEmail: {form.email}\n\n{form.message}"
+#     )
+
+#     try:
+#         await aiosmtplib.send(
+#             msg,
+#             hostname="smtp.gmail.com",
+#             port=587,
+#             start_tls=True,
+#             username=GMAIL_USER,
+#             password=GMAIL_PASS,
+#         )
+#         return {"message": "Message sent successfully"}
+#     except Exception as e:
+#         return {"message": f"Failed to send email"}
+@app.post("/contact_email")
+async def contact(form: ContactForm, background_tasks: BackgroundTasks):
+    background_tasks.add_task(send_contact_email, form)
+    return {"message": "Message is being sent"}
 
 @app.get("/", tags=["Root"])
 async def root():
