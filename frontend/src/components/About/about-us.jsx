@@ -1,26 +1,30 @@
 import SectionTopSVG from "@public/svg/SectionTopSVG";
 import SectionBottomSVG from "@public/svg/SectionBottomSVG";
 
-const InfoData = [
+const infoSections = [
   {
     title: "Gmail Privacy",
-    description:
+    content:
       "At TempGmail, we are dedicated to protecting your Gmail privacy. Your emails remain completely private—TempGmail never saves or stores any of your messages, ensuring total user confidentiality.",
+    reverse: false,
   },
   {
     title: "Our Commitment",
-    description:
+    content:
       "We are committed to safeguarding your email privacy. Each temporary Gmail we offer is built with security and simplicity in mind, ensuring you can use it with complete peace of mind.",
+    reverse: true,
   },
   {
     title: "Why Choose Us",
-    description:
+    content:
       "We offer authentic Gmail addresses with a professional edge, combining robust security and an easy-to-use design. Choose us for reliable, hassle-free email solutions that put your needs first.",
+    reverse: false,
   },
   {
     title: "Rapid Support",
-    description:
-      "Our dedicated team is available around the clock to assist with any questions or concerns. We’re committed to providing seamless service, always prioritizing your needs and ensuring your satisfaction.",
+    content:
+      "Our dedicated team is available around the clock to assist with any questions or concerns. We're committed to providing seamless service, always prioritizing your needs and ensuring your satisfaction.",
+    reverse: true,
   },
 ];
 
@@ -72,7 +76,7 @@ export default function AboutUs() {
           </h2>
         </div>
 
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-0 hidden md:block">
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-0 hidden md:block">
           <SectionBottomSVG className="relative block w-[calc(100%+1.3px)] h-14" />
         </div>
       </section>
@@ -97,25 +101,39 @@ export default function AboutUs() {
       </section>
 
       <section className="py-10 md:py-20 bg-primary relative">
-        <div class="absolute top-0 left-0 w-full overflow-hidden leading-0 rotate-180 hidden lg:block">
+        <div className="absolute top-0 left-0 w-full overflow-hidden leading-0 rotate-180 hidden lg:block">
           <SectionTopSVG className="relative block w-[calc(100%+1.3px)] h-20" />
         </div>
 
-        <div className="container">
-          <div className="space-y-4">
-            {InfoData.map((info, index) => (
-              <div
-                key={index}
-                className="bg-white max-w-4xl px-10 py-5 space-y-2 mx-auto clip-hexagon"
-              >
-                <h5 className="text-lg lg:text-xl font-semibold text-black ">{info.title}</h5>
-                <p>{info.description}</p>
+        <div className="container space-y-8">
+          <div className="max-w-5xl mx-auto space-y-5">
+            {infoSections.map((section, idx) => (
+              <div key={idx} className="flex flex-col md:flex-row items-stretch gap-x-6 md:gap-20">
+                <div
+                  className={`bg-white w-full md:w-fit text-black pb-0 md:pb-6 p-6 md:p-8 text-lg md:text-xl font-semibold relative flex items-center shrink-0 
+                md:after:content md:after:absolute md:after:w-1/4 md:after:h-full md:after:top-0 
+                md:after:-skew-x-[16deg] md:after:bg-white ${
+                  section.reverse ? "md:after:-left-6 md:order-2" : "md:after:-right-6"
+                } `}
+                >
+                  {section.title}
+                </div>
+
+                <div
+                  className={`bg-white p-6 md:p-8 relative w-full 
+              md:after:content md:after:absolute md:after:w-1/4 md:after:h-full md:after:top-0 
+              md:after:-skew-x-[16deg] md:after:bg-white ${
+                section.reverse ? "md:after:-right-6" : "md:after:-left-6"
+              }`}
+                >
+                  <p className="relative z-10 text-base">{section.content}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
 
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-0 hidden lg:block">
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-0 hidden lg:block">
           <SectionBottomSVG className="relative block w-[calc(100%+1.3px)] h-20" />
         </div>
       </section>

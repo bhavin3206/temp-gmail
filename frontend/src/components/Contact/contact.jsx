@@ -60,7 +60,7 @@ export default function Contact() {
           </h2>
         </div>
 
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-0 hidden md:block">
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-0 hidden md:block">
           <SectionBottomSVG className="relative block w-[calc(100%+1.3px)] h-14" />
         </div>
       </section>
@@ -75,12 +75,8 @@ export default function Contact() {
               </p>
               <div className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-lg text-black">Address</h4>
-                  <p>198 West 21th Street, Suite 721, Sri Lanka</p>
-                </div>
-                <div>
                   <h4 className="font-semibold text-lg text-black">Email</h4>
-                  <a href="mailto:nihapmrm@gmail.com">nihapmrm@gmail.com</a>
+                  <a href="mailto:contact@tempgmail.net">contact@tempgmail.net</a>
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg text-black">Website</h4>
@@ -92,13 +88,13 @@ export default function Contact() {
             <div className="space-y-6" data-aos="fade-left">
               <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
                 <div className="space-y-1">
-                  <label className="block font-medium text-black">Full Name</label>
+                  <label className="block font-medium text-black">Name</label>
                   <div className="relative">
                     <input
                       type="text"
                       {...register("name", contactFormValidation.name)}
                       className="w-full border border-gray-300 p-3 pl-10 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-foreground transition-all"
-                      placeholder="John Doe"
+                      placeholder="Name"
                     />
                     <UserIconSVG
                       iconWidth={20}
@@ -116,7 +112,7 @@ export default function Contact() {
                       type="email"
                       {...register("email", contactFormValidation.email)}
                       className="w-full border border-gray-300 p-3 pl-10 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-foreground transition-all"
-                      placeholder="you@example.com"
+                      placeholder="Email"
                     />
                     <EmailIconSVG
                       iconWidth={20}

@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
           </h2>
         </div>
 
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-0 hidden md:block">
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-0 hidden md:block">
           <SectionBottomSVG className="relative block w-[calc(100%+1.3px)] h-14" />
         </div>
       </section>
@@ -184,7 +184,7 @@ export default function PrivacyPolicy() {
               </p>
 
               <ul className="pl-5 list-disc">
-                <li>Email: nihapmrm@gmail.com</li>
+                <li>Email: contact@tempgmail.net</li>
               </ul>
 
               <p className="leading-relaxed text-base sm:text-lg">

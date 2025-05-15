@@ -15,7 +15,7 @@ export default function TermAndContition() {
           </h2>
         </div>
 
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-0 hidden md:block">
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-0 hidden md:block">
           <SectionBottomSVG className="relative block w-[calc(100%+1.3px)] h-14" />
         </div>
       </section>

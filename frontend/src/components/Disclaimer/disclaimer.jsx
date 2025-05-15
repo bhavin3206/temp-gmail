@@ -15,7 +15,7 @@ export default function Disclaimer() {
           </h2>
         </div>
 
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-0 hidden md:block">
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-0 hidden md:block">
           <SectionBottomSVG className="relative block w-[calc(100%+1.3px)] h-14" />
         </div>
       </section>
@@ -30,7 +30,7 @@ export default function Disclaimer() {
             <div className="space-y-4">
               <p className="leading-relaxed text-base sm:text-lg">
                 If you require any more information or have any questions about our site's
-                disclaimer, please feel free to contact us by email at tempmailhub@gmail.com. All
+                disclaimer, please feel free to contact us by email at contact@tempgmail.net. All
                 the information on this website -{" "}
                 <a href="https://tempgmail.net" className="text-primary-foreground" target="_blank">
                   https://tempgmail.net
