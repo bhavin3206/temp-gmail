@@ -7,24 +7,28 @@ const infoSections = [
     content:
       "At TempGmail, we are dedicated to protecting your Gmail privacy. Your emails remain completely private—TempGmail never saves or stores any of your messages, ensuring total user confidentiality.",
     reverse: false,
+    borderColor: "border-[#F8AD62] after:border-[#F8AD62]",
   },
   {
     title: "Our Commitment",
     content:
       "We are committed to safeguarding your email privacy. Each temporary Gmail we offer is built with security and simplicity in mind, ensuring you can use it with complete peace of mind.",
     reverse: true,
+    borderColor: "border-[#46D38F] after:border-[#46D38F]",
   },
   {
     title: "Why Choose Us",
     content:
       "We offer authentic Gmail addresses with a professional edge, combining robust security and an easy-to-use design. Choose us for reliable, hassle-free email solutions that put your needs first.",
     reverse: false,
+    borderColor: "border-[#67C8FF] after:border-[#67C8FF]",
   },
   {
     title: "Rapid Support",
     content:
       "Our dedicated team is available around the clock to assist with any questions or concerns. We're committed to providing seamless service, always prioritizing your needs and ensuring your satisfaction.",
     reverse: true,
+    borderColor: "border-[#F2736E] after:border-[#F2736E]",
   },
 ];
 
@@ -110,21 +114,19 @@ export default function AboutUs() {
             {infoSections.map((section, idx) => (
               <div key={idx} className="flex flex-col md:flex-row items-stretch gap-x-6 md:gap-20">
                 <div
-                  className={`bg-white w-full md:w-fit text-black pb-0 md:pb-6 p-6 md:p-8 text-lg md:text-xl font-semibold relative flex items-center shrink-0 
-                md:after:content md:after:absolute md:after:w-1/4 md:after:h-full md:after:top-0 
-                md:after:-skew-x-[16deg] md:after:bg-white ${
-                  section.reverse ? "md:after:-left-6 md:order-2" : "md:after:-right-6"
-                } `}
+                  className={`bg-white w-full md:w-fit text-black pb-0 md:pb-6 p-6 md:p-8 text-lg md:text-xl font-semibold relative flex items-center shrink-0 md:after:content md:after:absolute md:after:w-1/4 md:after:-top-[2px] md:after:-skew-x-[16deg] md:after:bg-white md:after:h-[calc(100%+3.5px)] ${
+                    section.reverse
+                      ? "md:after:-left-6 md:order-2 md:border-2 md:border-l-0 md:after:border-2 md:after:border-r-0"
+                      : "md:after:-right-6 md:border-2 md:border-r-0 md:after:border-2 md:after:border-l-0"
+                  } ${section.borderColor}`}
                 >
                   {section.title}
                 </div>
 
                 <div
-                  className={`bg-white p-6 md:p-8 relative w-full 
-              md:after:content md:after:absolute md:after:w-1/4 md:after:h-full md:after:top-0 
-              md:after:-skew-x-[16deg] md:after:bg-white ${
-                section.reverse ? "md:after:-right-6" : "md:after:-left-6"
-              }`}
+                  className={`bg-white p-6 md:p-8 relative w-full md:after:content md:after:absolute md:after:w-1/4 md:after:h-full md:after:top-0 md:after:-skew-x-[16deg] md:after:bg-white ${
+                    section.reverse ? "md:after:-right-6" : "md:after:-left-6"
+                  }`}
                 >
                   <p className="relative z-10 text-base">{section.content}</p>
                 </div>
