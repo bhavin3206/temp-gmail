@@ -1,3 +1,4 @@
+import SectionTopSVG from "@public/svg/SectionTopSVG";
 import SectionBottomSVG from "@public/svg/SectionBottomSVG";
 
 const InfoData = [
@@ -95,7 +96,11 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <section className="py-10 md:py-20 bg-primary">
+      <section className="py-10 md:py-20 bg-primary relative">
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-0 rotate-180 hidden lg:block">
+          <SectionTopSVG className="relative block w-[calc(100%+1.3px)] h-20" />
+        </div>
+
         <div className="container">
           <div className="space-y-4">
             {InfoData.map((info, index) => (
@@ -108,6 +113,10 @@ export default function AboutUs() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-0 hidden lg:block">
+          <SectionBottomSVG className="relative block w-[calc(100%+1.3px)] h-20" />
         </div>
       </section>
 
