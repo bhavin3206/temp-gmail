@@ -48,12 +48,6 @@ html {
   @apply mx-auto px-3.5;
 }
 
-@media (min-width: 992px) {
-  .clip-hexagon {
-    clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
-  }
-}
-
 .single-mail:hover {
   cursor: pointer !important;
   transform: scale(1.02);

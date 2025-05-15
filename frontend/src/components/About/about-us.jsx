@@ -1,3 +1,4 @@
+import UniHexagonSVG from "@public/svg/UniHexagonSVG";
 import SectionTopSVG from "@public/svg/SectionTopSVG";
 import SectionBottomSVG from "@public/svg/SectionBottomSVG";
 
@@ -142,35 +143,42 @@ export default function AboutUs() {
 
       <section className="py-10 md:py-20">
         <div className="container">
-          <div className="text-center mb-5">
+          <div className="text-center mb-10">
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center text-primary-foreground">
               Why We Are Unique
             </h3>
           </div>
 
-          <div className="space-y-2">
-            {UniqueSection.map((key, index) => (
-              <article
-                key={index}
-                className={`flex flex-col md:items-center gap-6 mx-auto max-w-5xl ${
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                } p-6 rounded-lg transition-all duration-300 hover:shadow-lg`}
+          <div className="space-y-10">
+            {UniqueSection.map((item) => (
+              <div
+                key={item.number}
+                className={`flex flex-col md:flex-row md:items-center transition-all duration-300 hover:scale-[1.02] ${
+                  item.number === "2"
+                    ? "lg:ml-[calc(6vw_+_1rem)]"
+                    : item.number === "3"
+                    ? "lg:ml-[calc(12vw_+_2rem)]"
+                    : item.number === "4"
+                    ? "lg:ml-[calc(18vw_+_3rem)]"
+                    : item.number === "5"
+                    ? "lg:ml-[calc(24vw_+_4rem)]"
+                    : ""
+                }`}
               >
-                <div className="shrink-0">
-                  <div
-                    className="bg-[#38AFE6] p-4 text-black font-semibold text-xl flex justify-center items-center size-20"
-                    style={{ clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)" }}
-                  >
-                    {key.number}
+                <div className="relative">
+                  <UniHexagonSVG className={"hidden md:block"} />
+                  <div className="bg-primary left-[19px] top-[19px] absolute w-[121px] h-[104px] flex items-center justify-center text-4xl font-semibold [clip-path:polygon(25%_0%,_75%_0%,_100%_50%,_75%_100%,_25%_100%,_0%_50%)]">
+                    {item.number}
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <h5 className="text-lg lg:text-xl font-semibold text-black ">{key.title}</h5>
-
-                  <p>{key.description}</p>
+                <div
+                  className={`bg-primary max-w-xl px-16 py-6 space-y-2 -translate-x-3 [clip-path:polygon(5%_0%,_95%_0%,_100%_50%,_95%_100%,_5%_100%,_0%_50%)]`}
+                >
+                  <h5 className="text-lg lg:text-xl font-semibold text-black">{item.title}</h5>
+                  <p className="text-sm">{item.description}</p>
                 </div>
-              </article>
+              </div>
             ))}
           </div>
         </div>
