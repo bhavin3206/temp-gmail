@@ -65,7 +65,7 @@ const GetMail = ({ emailData, setEmailData }) => {
     <>
       <div className="space-y-6">
         <div className="space-y-3 text-center">
-          <h2 className="text-black [&>span]:text-primary-foreground text-2xl xsm:text-2xl md:text-4xl font-bold">
+          <h2 className="text-black [&>span]:text-primary-foreground text-2xl xsm:text-2xl md:text-4xl font-bold whitespace-nowrap">
             Get Your Temp <span>G</span> <span>m</span> <span>a</span> <span>i</span> <span>l</span>
           </h2>
           <p className="text-sm md:text-base">

@@ -78,9 +78,9 @@ export default function Contact() {
                   <h4 className="font-semibold text-lg text-black">Email</h4>
                   <a href="mailto:contact@tempgmail.net">contact@tempgmail.net</a>
                 </div>
+
                 <div>
-                  <h4 className="font-semibold text-lg text-black">Website</h4>
-                  <a href="https://tempgmail.net">https://tempgmail.net</a>
+                  <img src="/images/contact-us.png" alt="contact-us" />
                 </div>
               </div>
             </div>
