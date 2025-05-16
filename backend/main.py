@@ -207,27 +207,58 @@ async def email_polling_task():
 
 
 async def send_contact_email(form: ContactForm):
-    msg = EmailMessage()
-    msg["From"] = GMAIL_USER
-    msg["To"] = form.email
-    msg["Subject"] = f"New Message: {form.subject}"
-    msg.set_content(
-        f"Name: {form.name}\nEmail: {form.email}\n\n{form.message}"
+    # 1. Thank-you email to the user
+    thank_you_msg = EmailMessage()
+    thank_you_msg["From"] = GMAIL_USER
+    thank_you_msg["To"] = form.email
+    thank_you_msg["Subject"] = "Thank You for Contacting Us"
+    thank_you_msg.set_content(
+        f"Hi {form.name},\n\n"
+        "Thank you for reaching out to us. We've received your message and will get back to you as soon as possible.\n\n"
+        "Best regards,\nYour Company Team"
+    )
+
+    # 2. Internal notification email to you/your team
+    internal_msg = EmailMessage()
+    internal_msg["From"] = GMAIL_USER
+    internal_msg["To"] = GMAIL_USER  # Replace with your or your team’s email
+    internal_msg["Subject"] = f"New Contact Form Submission: {form.subject}"
+    internal_msg.set_content(
+        f"New message from contact form:\n\n"
+        f"Name: {form.name}\n"
+        f"Email: {form.email}\n"
+        f"Subject: {form.subject}\n\n"
+        f"Message:\n{form.message}"
     )
 
     try:
+        # Send thank-you email
         await aiosmtplib.send(
-            msg,
+            thank_you_msg,
             hostname="mail.privateemail.com",
-            port=465,
+            port=587,
             start_tls=True,
             username=GMAIL_USER,
             password=GMAIL_PASS,
             timeout=10,
         )
-        print(f"Contact email sent successfully to {form.email}")
+        print(f"Thank-you email sent to {form.email}")
+
+        # Send internal notification email
+        await aiosmtplib.send(
+            internal_msg,
+            hostname="mail.privateemail.com",
+            port=587,
+            start_tls=True,
+            username=GMAIL_USER,
+            password=GMAIL_PASS,
+            timeout=10,
+        )
+        print(f"Notification email sent to internal team at {GMAIL_USER}")
+
     except Exception as e:
-        print(f"[Error sending contact email] {e}")
+        print(f"[Error sending contact emails] {e}")
+
 
 
 # Start the background polling task
