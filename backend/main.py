@@ -2,6 +2,7 @@ import random
 import re
 import asyncio
 from typing import Dict, List, Optional, Union, Set
+import smtplib
 
 import httpx
 from fastapi import FastAPI, HTTPException, BackgroundTasks, WebSocket, Form
@@ -13,6 +14,11 @@ import aiosmtplib
 
 GMAIL_USER = "contact@tempgmail.net"
 GMAIL_PASS= "Tempcontact@201"
+SMTP_SERVER = 'mail.privateemail.com'
+PORT = 465
+SMTP_USER = 'contact@tempgmail.net'
+SMTP_PASS = 'Tempcontact@201'
+SENDER_NAME = 'tempgmail.net'
 
 app = FastAPI(
     title="Temp Mail API",
@@ -209,7 +215,7 @@ async def email_polling_task():
 async def send_contact_email(form: ContactForm):
     # 1. Thank-you email to the user
     thank_you_msg = EmailMessage()
-    thank_you_msg["From"] = GMAIL_USER
+    thank_you_msg["From"] = f"{SENDER_NAME} <{SMTP_USER}>"
     thank_you_msg["To"] = form.email
     thank_you_msg["Subject"] = "Thank You for Contacting Us"
     thank_you_msg.set_content(
@@ -219,42 +225,24 @@ async def send_contact_email(form: ContactForm):
     )
 
     # 2. Internal notification email to you/your team
-    internal_msg = EmailMessage()
-    internal_msg["From"] = GMAIL_USER
-    internal_msg["To"] = GMAIL_USER  # Replace with your or your team’s email
-    internal_msg["Subject"] = f"New Contact Form Submission: {form.subject}"
-    internal_msg.set_content(
+    notify_msg = EmailMessage()
+    notify_msg["Subject"] = f"New Contact Form: {form.subject}"
+    notify_msg["From"] = f"{SENDER_NAME} <{SMTP_USER}>"
+    notify_msg["To"] = SMTP_USER
+    notify_msg.set_content(
         f"New message from contact form:\n\n"
         f"Name: {form.name}\n"
         f"Email: {form.email}\n"
         f"Subject: {form.subject}\n\n"
         f"Message:\n{form.message}"
     )
-
     try:
         # Send thank-you email
-        await aiosmtplib.send(
-            thank_you_msg,
-            hostname="mail.privateemail.com",
-            port=587,
-            start_tls=True,
-            username=GMAIL_USER,
-            password=GMAIL_PASS,
-            timeout=10,
-        )
-        print(f"Thank-you email sent to {form.email}")
-
-        # Send internal notification email
-        await aiosmtplib.send(
-            internal_msg,
-            hostname="mail.privateemail.com",
-            port=587,
-            start_tls=True,
-            username=GMAIL_USER,
-            password=GMAIL_PASS,
-            timeout=10,
-        )
-        print(f"Notification email sent to internal team at {GMAIL_USER}")
+        with smtplib.SMTP_SSL(SMTP_SERVER, PORT) as server:
+            server.login(SMTP_USER, SMTP_PASS)
+            server.send_message(thank_you_msg)
+            server.send_message(notify_msg)
+        print("Emails sent successfully.")
 
     except Exception as e:
         print(f"[Error sending contact emails] {e}")
