@@ -11,8 +11,8 @@ from pydantic import EmailStr
 from email.message import EmailMessage
 import aiosmtplib
 
-GMAIL_USER = "bhavinpatel99987@gmail.com"
-GMAIL_PASS= "tquw dzdf vpfq kjif"
+GMAIL_USER = "contact@tempgmail.net"
+GMAIL_PASS= "Tempcontact@201"
 
 app = FastAPI(
     title="Temp Mail API",
@@ -209,7 +209,7 @@ async def email_polling_task():
 async def send_contact_email(form: ContactForm):
     msg = EmailMessage()
     msg["From"] = GMAIL_USER
-    msg["To"] = GMAIL_USER
+    msg["To"] = form.email
     msg["Subject"] = f"New Message: {form.subject}"
     msg.set_content(
         f"Name: {form.name}\nEmail: {form.email}\n\n{form.message}"
@@ -218,12 +218,14 @@ async def send_contact_email(form: ContactForm):
     try:
         await aiosmtplib.send(
             msg,
-            hostname="smtp.gmail.com",
-            port=587,
+            hostname="mail.privateemail.com",
+            port=465,
             start_tls=True,
             username=GMAIL_USER,
             password=GMAIL_PASS,
+            timeout=10,
         )
+        print(f"Contact email sent successfully to {form.email}")
     except Exception as e:
         print(f"[Error sending contact email] {e}")
 
@@ -233,6 +235,10 @@ async def send_contact_email(form: ContactForm):
 async def startup_event():
     asyncio.create_task(email_polling_task())
 
+@app.post("/contact_email")
+async def contact(form: ContactForm, background_tasks: BackgroundTasks):
+    background_tasks.add_task(send_contact_email, form)
+    return {"message": "Message is being sent"}
 # @app.post("/contact_email")
 # async def contact(form: ContactForm):
 #     msg = EmailMessage()
@@ -255,10 +261,6 @@ async def startup_event():
 #         return {"message": "Message sent successfully"}
 #     except Exception as e:
 #         return {"message": f"Failed to send email"}
-@app.post("/contact_email")
-async def contact(form: ContactForm, background_tasks: BackgroundTasks):
-    background_tasks.add_task(send_contact_email, form)
-    return {"message": "Message is being sent"}
 
 @app.get("/", tags=["Root"])
 async def root():
