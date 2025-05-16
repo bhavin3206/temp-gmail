@@ -221,7 +221,7 @@ async def send_contact_email(form: ContactForm):
     thank_you_msg.set_content(
         f"Hi {form.name},\n\n"
         "Thank you for reaching out to us. We've received your message and will get back to you as soon as possible.\n\n"
-        "Best regards,\nYour Company Team"
+        "Best regards,\nTempgmail.net Team\n"
     )
 
     # 2. Internal notification email to you/your team
